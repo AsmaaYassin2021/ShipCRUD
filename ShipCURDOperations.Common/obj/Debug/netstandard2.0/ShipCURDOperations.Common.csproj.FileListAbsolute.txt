@@ -1,8 +1,0 @@
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\bin\Debug\netstandard2.0\ShipCURDOperations.Common.deps.json
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\bin\Debug\netstandard2.0\ShipCURDOperations.Common.dll
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\bin\Debug\netstandard2.0\ShipCURDOperations.Common.pdb
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\obj\Debug\netstandard2.0\ShipCURDOperations.Common.csprojAssemblyReference.cache
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\obj\Debug\netstandard2.0\ShipCURDOperations.Common.AssemblyInfoInputs.cache
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\obj\Debug\netstandard2.0\ShipCURDOperations.Common.AssemblyInfo.cs
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\obj\Debug\netstandard2.0\ShipCURDOperations.Common.dll
-D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Common\obj\Debug\netstandard2.0\ShipCURDOperations.Common.pdb
