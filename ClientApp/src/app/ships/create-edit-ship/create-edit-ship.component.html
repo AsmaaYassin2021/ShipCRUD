@@ -68,7 +68,7 @@
                 *ngIf="shipForm.controls['shipLength'].hasError('required') && (shipForm.controls['shipLength'].dirty || shipForm.controls['shipLength'].touched)">
                 Ship length is required.</span>
             <span class="text-danger"
-                *ngIf="shipForm.controls['shipLength'].hasError('invalidWidth') && (shipForm.controls['shipLength'].dirty || shipForm.controls['shipLength'].touched)">
+                *ngIf="shipForm.controls['shipLength'].hasError('invalidLength') && (shipForm.controls['shipLength'].dirty || shipForm.controls['shipLength'].touched)">
                 Ship length  min is 50 and max is 400.</span>
         </div>
     </div>

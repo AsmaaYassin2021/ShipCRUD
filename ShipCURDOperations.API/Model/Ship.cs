@@ -28,7 +28,7 @@ namespace ShipCURDOperations.API.Model
 
         [DataMember(Name = "shipLength")]
         [Required]
-        [Range(75, 400, ErrorMessage = "The ship Length must between 75 and 400.")]
+        [Range(50, 400, ErrorMessage = "The ship Length must between 75 and 400.")]
         public decimal ShipLength { get; set; }
 
         public Ship(IShip ship)

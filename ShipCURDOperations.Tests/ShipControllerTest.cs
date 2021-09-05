@@ -136,6 +136,9 @@ namespace ShipCURDOperations.Tests
             //Arrange
             var newShip = new Ship() { Code = "BAAA-1111-A2", Name = "Test Ship B", ShipLength = 100, ShipWidth = 50 };
             _mockShipService.Setup(repo => repo.AddShip(newShip)).ReturnsAsync(true);
+            _mockShipService.Setup(repo => repo.GetShipByCode(newShip.Code)).ReturnsAsync(newShip);
+
+
             _mockShipService.Setup(repo => repo.isUniqueName(newShip.Name)).ReturnsAsync(true);
 
             var updatedShip = new Ship() { Code = "BAAA-1111-A2", Name = "Test Ship B", ShipLength = 110, ShipWidth = 50 };
@@ -153,8 +156,12 @@ namespace ShipCURDOperations.Tests
         public async void Task_Update_InvalidData_Return_BadRequest()
         {
             //Arrange
+            var newShip = new Ship() { Code = "BAAA-1111-A2", Name = "Test Ship B", ShipLength = 100, ShipWidth = 50 };
+            _mockShipService.Setup(repo => repo.AddShip(newShip)).ReturnsAsync(true);
+            _mockShipService.Setup(repo => repo.GetShipByCode(newShip.Code)).ReturnsAsync(newShip);
+            _mockShipService.Setup(repo => repo.isUniqueName(newShip.Name)).ReturnsAsync(true);
 
-            var updatedShip = new Ship() { Code = "BAAA-", Name = "Test Ship B", ShipLength = 110, ShipWidth = 50 };
+            var updatedShip = new Ship() { Code = "BAAA-1111-A2", Name = "Test Ship B", ShipLength = 0, ShipWidth = 50 };
 
             //Act
             IActionResult actionResult = await _shipController.UpdateShip(updatedShip);
@@ -168,6 +175,8 @@ namespace ShipCURDOperations.Tests
         {
             //Arrange
             var updatedShip = new Ship() { Code = "BAAA-1111-A2", Name = "Test Ship B", ShipLength = 110, ShipWidth = 50 };
+            _mockShipService.Setup(repo => repo.GetShipByCode(updatedShip.Code)).ReturnsAsync(updatedShip);
+
             _mockShipService.Setup(repo => repo.UpdateShip(updatedShip)).ReturnsAsync(false);
 
             //Act

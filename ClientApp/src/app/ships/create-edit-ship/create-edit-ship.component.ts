@@ -204,7 +204,8 @@ export class CreateEditShipComponent implements OnInit {
     }).then((isConfirm: any) => {
       if (isConfirm) {
         this.addCancelled.emit(true);
-        this.router.navigate(['../../'], { relativeTo: this.route });
+       // this.router.navigate(['../../'], { relativeTo: this.route });
+       this.router.navigateByUrl('/ships');
       }
     });
   }
@@ -226,7 +227,8 @@ export class CreateEditShipComponent implements OnInit {
       if (isConfirm) {
         if (isNavigate) {
           this.addSucceeded.emit(true);
-          this.router.navigate(['../../'], { relativeTo: this.route });
+         // this.router.navigate(['../../'], { relativeTo: this.route });
+         this.router.navigateByUrl('/ships');
         }
       }
     });

@@ -36,7 +36,7 @@ export class ShipService {
     return this.http.delete(baseUrl + '/delete/' + code);
   }
   isCodeUnique(code: string): Observable<ShipResponse> {
-    return this.http.get(baseUrl + '/uniquecode/' + name);
+    return this.http.get(baseUrl + '/uniquecode/' + code);
 
   }
 

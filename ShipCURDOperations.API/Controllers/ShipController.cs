@@ -120,7 +120,8 @@ namespace ShipCURDOperations.API.Controllers
                 {
                     return BadRequest(Response<string>.Fail("The ship is empty "));
                 }
-                if (!await _shipService.isUniqueName(ship.Name))
+                IShip  oldShip= _shipService.GetShipByCode(ship.Code).Result;
+                if (!await _shipService.isUniqueName(ship.Name)&&ship.Name!=oldShip.Name)
                 {
                     return BadRequest(Response<string>.Fail("The ship name is repeated "));
 
