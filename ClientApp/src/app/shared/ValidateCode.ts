@@ -2,7 +2,7 @@ import { AbstractControl } from '@angular/forms';
 
 export function ValidateCode(control: AbstractControl) {
     const regex = new RegExp('^[a-zA-Z]{4}-[0-9]{4}-[a-zA-Z]{1}[0-9]{1}$');
-    const valid = regex.test(control.value);
+    const valid = regex.test(control.value.trim());
     return valid ? null : { invalidCode: true };
 
 }

@@ -27,7 +27,7 @@ namespace ShipCURDOperations.Data.Repository
         {
 
             var isSuccessed = false;
-
+            ship.Code.Trim();
             context.Ships.Add(new Ship(ship));
             int returnNumber = await context.SaveChangesAsync();
             if (returnNumber == 1)

@@ -81,6 +81,7 @@ namespace ShipCURDOperations.API.Controllers
                 {
                     return BadRequest(Response<string>.Fail("The ship is empty "));
                 }
+                ship.Code.Trim();
                 if (!await _shipService.isUniqueCode(ship.Code) || !await _shipService.isUniqueName(ship.Name))
                 {
                     return BadRequest(Response<string>.Fail("The ship name or code is repeated "));

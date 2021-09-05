@@ -87,7 +87,7 @@ export class CreateEditShipComponent implements OnInit {
           Validators.required,
           ValidateShipLength,
         ],
-        updateOn: 'blur'
+        updateOn: 'change'
       }],
       'name': ['', {
         validators: [
@@ -136,7 +136,7 @@ export class CreateEditShipComponent implements OnInit {
 
     this.isUniqueName();
     if (this.isAddMode) {
-     // this.isUniqueCode();
+     this.isUniqueCode();
     }
 
     for (let c in this.shipForm.controls) {
