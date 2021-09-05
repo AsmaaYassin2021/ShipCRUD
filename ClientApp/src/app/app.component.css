@@ -1,0 +1,7 @@
+/* .ng-dirty.ng-touched:not(form) {
+    border: solid 2px lightgreen;
+  } */
+  
+  .ng-dirty.ng-touched:not(form), .ng-invalid:not(form).form-submitted {
+    border: solid 2px lightcoral;
+  }

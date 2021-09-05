@@ -1,0 +1,13 @@
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Business.deps.json
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Business.dll
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Business.pdb
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.csprojAssemblyReference.cache
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.AssemblyInfoInputs.cache
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.AssemblyInfo.cs
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.dll
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.pdb
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Common.dll
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Common.pdb
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\obj\Debug\netstandard2.0\ShipCURDOperations.Business.csproj.CopyComplete
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Data.dll
+D:\ShipTask\ShipCURDOperations\ShipCURDOperations.Business\bin\Debug\netstandard2.0\ShipCURDOperations.Data.pdb

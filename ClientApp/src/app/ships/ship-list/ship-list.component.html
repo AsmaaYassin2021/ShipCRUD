@@ -1,0 +1,52 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+
+<div class="p-2" *ngIf="displayList">
+    <button class="float-right mr-1 btn btn-labeled btn-info mb-2" (click)="navigateToCreateShip()" type="button">
+        <span class="btn-label">
+            <i class="fa fa-plus"></i>
+        </span>  Create Ship
+    </button>
+</div>
+
+
+<table class="table table-bordered" *ngIf="displayList">
+       
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Code</th>
+                    <th>Length</th>
+                    <th>Width</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let ship of ships">
+                    <td>{{ship.name}}</td>
+                    <td>{{ship.code}}</td>
+                    <td>{{ship.shipLength}}</td>
+                    <td>{{ship.shipWidth}}</td>
+                    <td>
+                        <a routerLink="edit/{{ship.code}}" class="update btn btn-warning btn-sm">
+                       
+                            <span class="glyphicon glyphicon-pencil">
+
+                            </span></a></td>
+		            <td>
+                        <button type="button" (click)="deleteShip(ship.code)" class="delete btn btn-danger btn-sm">
+                            <span class="glyphicon glyphicon-trash"></span></button></td>
+                </tr>
+                <tr *ngIf="!ships">
+                    <td colspan="4" class="text-center">
+                        <span class="spinner-border spinner-border-lg align-center"></span>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+   
+<div >
+    <create-edit-ship *ngIf="!displayList" (addCancelled)="onCreateCancelled($event)"
+        (addSucceeded)="onCreateSucceeded($event)"></create-edit-ship>
+</div>
