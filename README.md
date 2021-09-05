@@ -23,6 +23,7 @@ Instructions required to run your application locally
 2- run docker file to build backend projects  
 
 ShipCURDOperations> docker build --pull --rm -f "Dockerfile" -t shipcurdoperationslib:latest .
+
 ShipCURDOperations> docker run -p 5006:80 shipcurdoperationslib
 
 and API project will run on 5006 port for example  http://localhost:5006/api/ships/create
@@ -30,6 +31,7 @@ and API project will run on 5006 port for example  http://localhost:5006/api/shi
 3- run docker file for ClientApp 
 
 ShipCURDOperations\ClientApp> docker build -f "Dockerfile" -t shipcurdoperationsclientapp:latest .
+
 ShipCURDOperations\ClientApp> docker run --rm -it -p 4201:4200 shipcurdoperationsclientapp
 
 and ClientApp will run on http://localhost:4201/
