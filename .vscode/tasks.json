@@ -17,7 +17,6 @@
                 "isDefault": true
             }
         },
-       
         {
             "label": "publish",
             "command": "dotnet",
@@ -42,6 +41,79 @@
                 "/consoleloggerparameters:NoSummary"
             ],
             "problemMatcher": "$msCompile"
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build: debug",
+            "dependsOn": [
+                "build"
+            ],
+            "dockerBuild": {
+                "tag": "shipcurdoperations:dev",
+                "target": "base",
+                "dockerfile": "${workspaceFolder}/ShipCURDOperations.API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/ShipCURDOperations.API/ShipCURDOperations.API.csproj"
+            }
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build: release",
+            "dependsOn": [
+                "build"
+            ],
+            "dockerBuild": {
+                "tag": "shipcurdoperations:latest",
+                "dockerfile": "${workspaceFolder}/ShipCURDOperations.API/Dockerfile",
+                "context": "${workspaceFolder}",
+                "pull": true
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/ShipCURDOperations.API/ShipCURDOperations.API.csproj"
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: debug",
+            "dependsOn": [
+                "docker-build: debug"
+            ],
+            "dockerRun": {
+                "os": "Windows"
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/ShipCURDOperations.API/ShipCURDOperations.API.csproj",
+                "enableDebugging": true
+            }
+        },
+        {
+            "type": "docker-run",
+            "label": "docker-run: release",
+            "dependsOn": [
+                "docker-build: release"
+            ],
+            "dockerRun": {
+                "os": "Windows"
+            },
+            "netCore": {
+                "appProject": "${workspaceFolder}/ShipCURDOperations.API/ShipCURDOperations.API.csproj"
+            }
+        },
+        {
+            "type": "docker-build",
+            "label": "docker-build",
+            "platform": "node",
+            "dockerBuild": {
+                "dockerfile": "${workspaceFolder}/ClientApp/Dockerfile",
+                "context": "${workspaceFolder}/ClientApp",
+                "pull": true
+            },
+            "node": {
+                "package": "${workspaceFolder}/ClientApp/package.json"
+            }
         }
     ]
 }

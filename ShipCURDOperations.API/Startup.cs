@@ -46,7 +46,7 @@ namespace ShipCURDOperations.API
             services.AddScoped<IShipService, ShipService>();
             services.AddScoped<IShipRepository, ShipRepository>();
             services.AddDbContext<MemoryDBContext>(opt => opt.UseInMemoryDatabase(databaseName: "Ships"), ServiceLifetime.Scoped);
-            //
+             // retrun custom bad request if the model ModelState is nvalid.
             services.Configure<ApiBehaviorOptions>(o =>
                        {
                            o.InvalidModelStateResponseFactory = actionContext =>
