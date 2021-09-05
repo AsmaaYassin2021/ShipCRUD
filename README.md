@@ -3,7 +3,7 @@ The application will allow the user to perform CRUD (Create, Read, Update &amp; 
 
 The solution contains from
 1- Client App ==> Two pages Home and ships
-Ship Form validation :
+--Ship Form validation :
 a-Code must be required, match the pattern " AAAA-1111-A1" and not used before
 b-Name must be required, the minimum length is 2, the max length is 100  and not used before
 c-Ship width has to be a number and I  supposed that the ship width must have validation on the value so I did the width  between 15 and 70
