@@ -17,6 +17,7 @@ namespace ShipCURDOperations.API.Model
         [DataMember(Name = "code")]
         [Required]
         [StringLength(12, MinimumLength = 12)]
+        [RegularExpression("^[a-zA-Z]{4}-[0-9]{4}-[a-zA-Z]{1}[0-9]{1}$", ErrorMessage = "Ship code is invalid code. The code has to match this pattern 'AAAA-1111-A1'")]
         public string Code { get; set; }
 
         [DataMember(Name = "shipWidth")]
@@ -27,7 +28,7 @@ namespace ShipCURDOperations.API.Model
 
         [DataMember(Name = "shipLength")]
         [Required]
-        [Range(75, 400, ErrorMessage = "The ship Length must between 75 and 400.")]
+        [Range(50, 400, ErrorMessage = "The ship Length must between 75 and 400.")]
         public decimal ShipLength { get; set; }
 
         public Ship(IShip ship)

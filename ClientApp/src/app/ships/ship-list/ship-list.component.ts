@@ -55,7 +55,6 @@ export class ShipListComponent implements OnInit {
     this.shipService.delete(code)
       .pipe(first())
       .subscribe(res => {
-        console.log(res)
         if (res.succeeded) {
           this.showMessage(res.data, "Successfully deleted", true);
           this.ships = this.ships.filter(x => x.code !== code)
@@ -81,6 +80,7 @@ export class ShipListComponent implements OnInit {
 
     }
   }
+  
   showMessage(message: string, title: string, isNavigate: boolean) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {

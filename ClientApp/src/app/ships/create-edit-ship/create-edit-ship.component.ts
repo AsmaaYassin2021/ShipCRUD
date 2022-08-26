@@ -87,7 +87,7 @@ export class CreateEditShipComponent implements OnInit {
           Validators.required,
           ValidateShipLength,
         ],
-        updateOn: 'blur'
+        updateOn: 'change'
       }],
       'name': ['', {
         validators: [
@@ -130,13 +130,17 @@ export class CreateEditShipComponent implements OnInit {
       });
     }
   }
-
+/**
+  * On submit in case create ship => make check if the name or the code is used before or not 
+  * update ship  disable code and check check if the name  is used before or not  
+  * show error message the field is repeated 
+  */
   onSubmit() {
 
 
     this.isUniqueName();
     if (this.isAddMode) {
-     // this.isUniqueCode();
+     this.isUniqueCode();
     }
 
     for (let c in this.shipForm.controls) {
@@ -186,6 +190,9 @@ export class CreateEditShipComponent implements OnInit {
       .add(() => this.loading = false);
   }
 
+  /*
+  if the user clicks of cancel button if he doesn't want to add or update then retrun to ship list page
+  */
   cancelCreate() {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -196,7 +203,7 @@ export class CreateEditShipComponent implements OnInit {
     })
     swalWithBootstrapButtons.fire({
       title: 'Are you sure?',
-      text: 'Do you want to cancel and return to main page!',
+      text: 'Do you want to cancel and return to ships page!',
       icon: 'info',
       showCancelButton: true,
       confirmButtonText: 'Yes, Cancel!',
@@ -204,11 +211,15 @@ export class CreateEditShipComponent implements OnInit {
     }).then((isConfirm: any) => {
       if (isConfirm) {
         this.addCancelled.emit(true);
-        this.router.navigate(['../../'], { relativeTo: this.route });
+       this.router.navigateByUrl('/ships');
       }
     });
   }
 
+  /*
+    if the add or update opertion is done  so isNavigate will be true then retrun to ships page
+    or there are errors return from API so isNavigate will be false  not retrun to ship pages
+   */
   showMessage(message: string, title: string, isNavigate: boolean) {
     const swalWithBootstrapButtons = Swal.mixin({
       customClass: {
@@ -226,11 +237,14 @@ export class CreateEditShipComponent implements OnInit {
       if (isConfirm) {
         if (isNavigate) {
           this.addSucceeded.emit(true);
-          this.router.navigate(['../../'], { relativeTo: this.route });
+         this.router.navigateByUrl('/ships');
         }
       }
     });
   }
+  /*
+  handle errors coming from API requests 
+  */
   handleHttpErrorResponse(httpErrorResponse: HttpErrorResponse) {
     if (httpErrorResponse.status == 400) {
       if (!Array.isArray(httpErrorResponse.error.errors)) {
